@@ -9,6 +9,10 @@ import { UserList } from "./user/UserList";
 import { UserCreate } from "./user/UserCreate";
 import { UserEdit } from "./user/UserEdit";
 import { UserShow } from "./user/UserShow";
+import { OAuthProviderList } from "./oAuthProvider/OAuthProviderList";
+import { OAuthProviderCreate } from "./oAuthProvider/OAuthProviderCreate";
+import { OAuthProviderEdit } from "./oAuthProvider/OAuthProviderEdit";
+import { OAuthProviderShow } from "./oAuthProvider/OAuthProviderShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -28,7 +32,7 @@ const App = (): React.ReactElement => {
   return (
     <div className="App">
       <Admin
-        title={"My app-1"}
+        title={"persoanl-trainer-log-backend"}
         dataProvider={dataProvider}
         authProvider={jwtAuthProvider}
         theme={theme}
@@ -41,6 +45,13 @@ const App = (): React.ReactElement => {
           edit={UserEdit}
           create={UserCreate}
           show={UserShow}
+        />
+        <Resource
+          name="OAuthProvider"
+          list={OAuthProviderList}
+          edit={OAuthProviderEdit}
+          create={OAuthProviderCreate}
+          show={OAuthProviderShow}
         />
       </Admin>
     </div>
