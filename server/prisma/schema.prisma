@@ -17,3 +17,12 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model OAuthProvider {
+  createdAt DateTime @default(now())
+  enabled   Boolean?
+  id        String   @id @default(cuid())
+  key       String?
+  secret    String?
+  updatedAt DateTime @updatedAt
+}
